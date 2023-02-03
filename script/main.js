@@ -7,15 +7,16 @@ let navButton = document.querySelectorAll('#buttonHolder img'),
 
 // functions go in the middle
 function changeBGImage() {
-	// debugger;
-	// theHeadline.style.color = "orange";
-	// object.property = "new value"
-	// theHeadline.textContent = "Drag and Drop is fun";
-	// theHeadline.classList.add('orange-headline');
-
+	let newBGPath = "images/backGround" + this.id + ".jpg";
+	//debugger;
 	//chnage the background image in the drop zone
-	puzzleBoard.style.backgroundImage = 'url("../images/backGround"' + this.id + '".jpg")';
+	//the `${}` is called a JS Template String - anything inside curly
+	//brackets is evaluated at runtime and interpolated (replaces brackets with notation)
+
+	//you can use variables, functions, etc inline in your code
+	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
 }
+
 // event is handling at the bottom
 // how is the user going to interact with it
 navButton.forEach(button => button.addEventListener('click', changeBGImage));
